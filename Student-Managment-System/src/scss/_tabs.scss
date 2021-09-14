@@ -1,0 +1,80 @@
+.bp-tabs {
+    &.bp-vertical {
+        background:#f2f2f2;
+        border-radius:0 0 8px 8px;
+        min-height:calc( 100vh - 320px );
+        height:100%;
+        display:flex;
+        flex-direction:column;
+        .bp-tab {
+            padding:15px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            color:#888;
+            font-weight:500;
+            font-size:0.95rem;
+            .far, .fad, .fas, .fal {
+                font-size:1.1rem;
+            }
+            &:hover {
+                cursor:pointer;
+                background:#f6f6f6;
+                color:#666;
+            }
+            &.active {
+                background:#fff;
+                color:#333;
+                .far, .fad, .fas, .fal {
+                    color:$blue;
+                }
+            }
+        }
+    }
+    &.bp-horizontal {
+        display:flex;
+        width:100%;
+        .bp-tab {
+            width:100%;
+            font-size:0.95rem;
+            font-weight:700;
+            padding:0 0 16px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            box-shadow:inset 0 -3px 0 0 #ddd;
+            color:#888;
+            cursor:pointer;
+            &:hover {
+                color:#555;
+                box-shadow:inset 0 -5px 0 0 #ddd;
+            }
+            &.active {
+                cursor:default;
+                color:inherit;
+                box-shadow:inset 0 -5px 0 0 $blue;
+            }
+        }
+    }
+}
+
+.bp-tab-content {
+    &.bp-service-tab-content {
+        overflow-x:hidden;
+        overflow-y:auto;
+        max-height:calc( 100vh - 273px );
+        padding:0 25px 0 30px;
+        margin:0 -25px 0 -30px;
+    }
+}
+
+.bp-tab-header {
+    background:#32373d;
+    color:#fff;
+    font-size:11px;
+    text-transform:uppercase;
+    font-weight:700;
+    letter-spacing:0.01rem;
+    padding:13px 15px 14px;
+    border-radius:4px 4px 0 0;
+}

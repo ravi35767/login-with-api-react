@@ -1,0 +1,221 @@
+.bp-form-builder {
+    .bp-fb-header {
+        border-radius:5px 5px 0 0;
+        background:$blue;
+        color:#fff;
+        text-align:center;
+        padding:20px;
+        font-size:1rem;
+        font-weight:600;
+    }
+    .bp-fb-section-header {
+        font-weight:600;
+        margin:0 0 20px;
+    }
+    .bp-fb-section-desc {
+        font-size:0.9rem;
+        font-weight:400;
+        margin:-5px 0 20px;
+    }
+    .bp-default-fields {
+        padding:25px;
+        background:#f9f9f9;
+        box-shadow:inset 0 0 0 1px #e5e5e5;
+    }
+    .bp-registraton-fields {
+        padding: 25px 25px 5px 25px;
+        background:#fff;
+        box-shadow: inset 0 1px 0 1px #e5e5e5;
+        .bp-section-fields {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 10px;
+            
+            .field-indicator {
+                color: #aaa;
+                font-weight: 500;
+                padding: 10px;
+                border: 1px solid #dddddd;
+                border-radius: 3px;
+            }
+        }
+    }
+    .bp-custom-fields {
+        padding:25px;
+        margin:0 0 5px;
+        background:#fff;
+        border-radius:0 0 4px 4px;
+        box-shadow:inset 0 -1px 0 1px #e5e5e5;
+        .bp-cf-buttons {
+            position:relative;
+            display:flex;
+            .bp-cf-popup {
+                position:absolute;
+                bottom:43px; left:-40px;
+                z-index:99;
+                width:225px;
+                overflow:hidden;
+                border-radius:4px;
+                box-shadow:$box-shadow-small, 0 8px 8px rgba(0,0,0,0.05);
+                background:#fff;
+                .bp-cf-popup-title {
+                    padding:12px 10px;
+                    font-size:0.9rem;
+                    font-weight:500;
+                    background:#000;
+                    color:#fff;
+                    text-align:center;
+                }
+                .bp-cf-popup-buttons {
+                    padding:13px 15px;
+                    display:flex;
+                    flex-direction:column;
+                    > div {
+                        margin:2px 0;
+                        display:block;
+                        text-align:center;
+                    }
+                }
+            }
+        }
+        .bp-cf-wrapper {
+            display:flex;
+            flex-direction:column;
+            position:relative;
+            background:#f9f9f9;
+            box-shadow:inset 0 0 0 1px #e5e5e5;
+            padding:10px 15px;
+            margin: 0 0 20px;
+            border-radius: 5px;
+            > div.bp-cf-field {
+                background:#fff;
+                box-shadow:inset 0 0 0 1px #e5e5e5, 0 2px 2px rgba(0,0,0,0.05);
+                padding:10px;
+                margin:5px 0;
+                border-radius:4px;
+                .bp-cf-field-type {
+                    color:#aaa;
+                    text-transform:uppercase;
+                    font-weight:800;
+                    letter-spacing:0.02rem;
+                    line-height:1;
+                    margin:0 0 10px;
+                    font-size:11px;
+                }
+                .bp-inline-fields {
+                    justify-content:stretch;
+                    align-items:flex-start;
+                    width:calc(100% + 10px);
+                    margin:0 -5px;
+                    padding-left:45px;
+                    position:relative;
+                    > span { font-size:0.9rem; white-space:nowrap; display:block; width:auto; margin:0 5px; }
+                    > .bp-field {
+                        margin:0 5px;
+                        width:100%;
+                        &.bp-checkbox-field { width:auto; height:33px; display:flex; align-items:center; padding:0 10px; }
+                        &.bp-button-field { max-width:35px; }
+                        &.number { max-width:100px; }
+                        .bp-custom-checkbox { margin:0; }
+                    }
+                    &:nth-child(2){
+                        padding-left:0;
+                    }
+                    .bp-field-inline-trash {
+                        position:absolute;
+                        top:9px; right:12px;
+                        color:#aaa;
+                        font-size:0.9rem;
+                        cursor:pointer;
+                        &:hover {
+                            color:$red;
+                        }
+                    }
+                }
+                .bp-cf-options .bp-inline-fields:nth-child(2) {
+                    padding-left: 45px;
+                }
+            }
+        }
+    }
+}
+
+.custom-field-drag.bp-cf-field {
+    background:#fff;
+    box-shadow:inset 0 0 0 1px #e5e5e5, 0 2px 2px rgba(0,0,0,0.05);
+    padding:10px;
+    margin:5px 0;
+    border-radius:4px;
+    .bp-cf-field-type {
+        color:#aaa;
+        text-transform:uppercase;
+        font-weight:800;
+        letter-spacing:0.02rem;
+        line-height:1;
+        margin:0 0 10px;
+        font-size:11px;
+    }
+    .bp-inline-fields {
+        justify-content:stretch;
+        align-items:flex-start;
+        width:calc(100% + 10px);
+        margin:0 -5px;
+        padding-left:45px;
+        position:relative;
+        > span { font-size:0.9rem; white-space:nowrap; display:block; width:auto; margin:0 5px; }
+        > .bp-field {
+            margin:0 5px;
+            width:100% !important;
+            &.bp-checkbox-field { width:auto; height:33px; display:flex; align-items:center; padding:0 10px; }
+            &.bp-button-field { max-width:35px; }
+            &.number { max-width:100px; }
+            .bp-custom-checkbox { margin:0; }
+        }
+        &:nth-child(2){
+            padding-left:0;
+        }
+        .bp-field-inline-trash {
+            position:absolute;
+            top:9px; right:12px;
+            color:#aaa;
+            font-size:0.9rem;
+            cursor:pointer;
+            &:hover {
+                color:$red;
+            }
+        }
+    }
+
+    .bp-cf-options .bp-inline-fields:nth-child(2) {
+        padding-left: 45px;
+    }
+}
+
+.custom-field-option-drag.bp-inline-fields {
+    display: flex;
+    justify-content:stretch;
+    align-items:flex-start;
+    width:calc(100% + 10px);
+    margin:0 -5px;
+    padding-left:45px;
+    position:relative;
+    > span { font-size:0.9rem; white-space:nowrap; display:block; width:auto; margin:0 5px; }
+    > .bp-field {
+        margin:0 5px;
+        width:100% !important;
+        &.bp-checkbox-field { width:auto; height:33px; display:flex; align-items:center; padding:0 10px; }
+        &.bp-button-field { max-width:35px; }
+        &.number { max-width:100px; }
+        .bp-custom-checkbox { margin:0; }
+    }
+    .bp-field-inline-trash {
+        position:absolute;
+        top:9px; right:12px;
+        color:#aaa;
+        font-size:0.9rem;
+        cursor:pointer;
+        &:hover {
+            color:$red;
+        }
+    }
+}

@@ -1,0 +1,46 @@
+.bp-button {
+    display:flex;
+    padding:10px 12px;
+    background:#e5e5e5;
+    color:#888;
+    font-weight:500;
+    border-radius:4px;
+    font-size:13px;
+    text-decoration:none;
+    cursor:pointer;
+    .fal, .far, .fas, .fad {
+        display:block;
+        margin:0 8px 0 0;
+    }
+    &.bp-icon-only {
+        padding:10px 10px 8px;
+        .fal, .far, .fas, .fad {
+            font-size:15px;
+            margin:0;
+        }
+    }
+    &:hover {
+        background:#ddd;
+        color:#555;
+    }
+    &.bp-button-primary {
+        background:$blue;
+        color:#fff;
+        &:hover {
+            background:$blue-dk;
+            color:#fff;
+        }
+    }
+    &.bp-button-primary-lt, &.bp-button-primary-lt:hover {
+        background:$blue-ultra-lt;
+        color:$blue;
+        box-shadow:inset 0 0 0 1px $blue-lt;
+        cursor: pointer;
+    }
+    &.bp-trash {
+        &:hover {
+            background:$red;
+            color:#fff;
+        }
+    }
+}

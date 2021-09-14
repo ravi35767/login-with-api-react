@@ -1,0 +1,168 @@
+.bp-field {
+    .bp-custom-select {
+        position:relative;
+        border:none;
+        box-shadow:inset 0 0 0 1px #ddd;
+        line-height:24px;
+        border-radius:3px;
+        color:inherit;
+        background:#fff;
+        padding:10px;
+        height:44px;
+        font-size:1rem;
+        &:hover {
+            box-shadow:inset 0 0 0 1px #aaa;
+        }
+        label {
+            position:absolute;
+            top:8px; left:10px;
+            display:block;
+            opacity:0;
+            font-size:10px;
+            font-weight:800;
+            line-height:1;
+            color:#aaa;
+            margin:0;
+            padding:0;
+            text-transform:uppercase;
+            letter-spacing:0.01rem;
+            z-index:1;
+        }
+        .bp-dummy-placeholder,
+        .bp-dummy-value {
+            padding-right:25px;
+        }
+        .bp-dummy-value,
+        .bp-dummy-placeholder {
+            display:none;
+            font-size:0.9rem;
+            font-weight:500;
+        }
+        .bp-dummy-placeholder { color:#aaa; display:block; }
+        select {
+            cursor:pointer;
+            z-index:2;
+            position:absolute;
+            top:0; left:0;
+            width:100%;
+            height:100%;
+            display:block;
+            font-size:0.9rem;
+            font-weight:500;
+            color:#000;
+            -moz-appearance:none;
+            -webkit-appearance:none;
+            appearance:none;
+            opacity:0;
+            &[disabled] {
+                cursor:not-allowed;
+            }
+        }
+        &::after {
+            color:#333;
+            content:"\f107";
+            display:block;
+            font-weight:600;
+            position:absolute;
+            top:50%; right:14px;
+            margin:-11px 0 0 0;
+            font-family:"Font Awesome 5 Pro";
+        }
+    }
+    &.bp-value {
+        .bp-custom-select {
+            label {
+                opacity:1;
+                transition:opacity 150ms ease-in-out;
+            }
+            select { padding:17px 10px 4px; }
+            .bp-dummy-value { line-height:1; display:block; }
+            .bp-dummy-placeholder { line-height:1; display:none; }
+        }
+    }
+    &.bp-focus {
+        .bp-custom-select {
+            label {
+                color:$blue;
+            }
+        }
+    }
+    &.bp-error {
+        .bp-custom-select {
+            select { border-color:#ff0000; }
+            label { color:#ff0000; }
+        }
+        &.bp-required::after, &.bp-focus {
+            .bp-custom-select, .bp-custom-select label { color:#ff0000; }
+        }
+    }
+
+    &.bp-readonly {
+        .bp-custom-select {
+            label {
+                position:relative;
+                top:0; left:0;
+                color:#aaa;
+            }
+            select {
+                display:none;
+            }
+            .bp-readonly-value {
+                display:block;
+                a {
+                    text-decoration:none;
+                    color:inherit;
+                    &:hover {
+                        color:$blue;
+                        text-decoration:underline;
+                    }
+                }
+            }
+        }
+    }
+    &.bp-required {
+        .bp-custom-select {
+            &::after {
+                right:34px;
+            }
+            .bp-dummy-placeholder,
+            .bp-dummy-value {
+                padding-right:50px;
+            }
+        }
+    }
+    &.bp-value {
+        .bp-custom-select { padding:21px 10px 0px; }
+    }
+    &.bp-no-label {
+        .bp-custom-select {
+            min-width:150px;
+            padding:9px 10px;
+            height:33px;
+            select { padding:9px 10px; }
+        }
+    }
+    &.bp-error {
+        .bp-custom-select { border-color:#ff0000; }
+    }
+    &.bp-readonly {
+        .bp-custom-select {
+            border:none;
+            padding:0;
+            .bp-dummy-value {
+                padding:3px 0;
+            }
+            &::after { display:none; }
+        }
+    }
+    &.bp-disabled {
+        .bp-custom-select {
+            border-color:#ddd;
+            color:#aaa;
+            background:#eee;
+            &:hover {
+                border-color:#ddd;
+            }
+        }
+    }
+}
