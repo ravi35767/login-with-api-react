@@ -65,7 +65,7 @@ export default function Login() {
     const history = useHistory();
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
-
+ 
 
     const postLogin = (e) => {
         e.preventDefault();
@@ -73,7 +73,7 @@ export default function Login() {
         console.log(password);
         axios({
             method: "POST",
-            url: 'https://2fbb-110-93-240-113.ngrok.io/api/user/login',
+            url: 'http://localhost:3501/api/user/login',
             data: {
                 userData: {
                     email,
@@ -81,9 +81,17 @@ export default function Login() {
                 }
             }
         })
-            .then((response) =>
-                history.push("/welcome")
-            )
+            .then((response) => {
+                console.log("yes here is response", response)
+                let id = response.data.id
+                if (response.data.role === "admin") {
+                    history.push("/welcome")
+                } else if (response.data.role === "Teacher") {
+                    history.push("/teacher-profile", { id: id })
+                } else if (response.data.role === "Student") {
+                    history.push("/student-profile", { id: id })
+                }
+            })
             .catch((e) =>
                 console.log(e)
             );

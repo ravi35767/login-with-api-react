@@ -4,6 +4,8 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 // import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { makeStyles } from '@material-ui/core/styles';
+import { useHistory } from "react-router-dom";
+import Button from '@material-ui/core/Button';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -19,26 +21,29 @@ const useStyles = makeStyles((theme) => ({
         backgroundPosition: 'center',
     },
     paper: {
-        margin: theme.spacing(8, 4),
+        margin: theme.spacing(5, 3),
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
     },
-    avatar: {
-        margin: theme.spacing(1),
-        backgroundColor: theme.palette.secondary.main,
-    },
-    form: {
-        width: '100%', // Fix IE 11 issue.
-        marginTop: theme.spacing(1),
-    },
-    submit: {
-        margin: theme.spacing(3, 0, 2),
+    studentBtn: {
+        margin: theme.spacing(0, 0),
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
     },
 }));
 
 export default function WelcomePage() {
     const classes = useStyles();
+    const history = useHistory();
+    const goToTeacharProfile = () => {
+        history.push("/teacher-profile")
+    }
+
+    const goToStudentProfile = () => {
+        history.push("/student-profile")
+    }
 
     return (
         <Grid container component="main" className={classes.root}>
@@ -47,7 +52,27 @@ export default function WelcomePage() {
             <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
                 <div className={classes.paper}>
                     Welcome to Admin Page
+                    {/* <Button
+                        type="submit"
+
+                        variant="contained"
+                        color="primary"
+                        onClick={goToTeacharProfile}
+                    >
+                        Teacher Profile
+                    </Button> */}
                 </div>
+                {/* <div className={classes.studentBtn}>
+
+                    <Button
+                        type="submit"
+                        variant="contained"
+                        color="primary"
+                        onClick={goToStudentProfile}
+                    >
+                        Student Profile
+                    </Button>
+                </div> */}
             </Grid>
         </Grid>
     );

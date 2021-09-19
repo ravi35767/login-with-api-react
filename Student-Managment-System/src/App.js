@@ -7,6 +7,8 @@ import {
 } from "react-router-dom";
 import Login from "./components/Login"
 import WelcomePage from './components/WelcomePage';
+import TeacherProfile from './components/TeacherProfile';
+import StudentProfile from './components/StudentProfile';
 export default class App extends React.Component {
 
 
@@ -19,6 +21,12 @@ export default class App extends React.Component {
           </Route>
           <Route path="/welcome">
             <WelcomePage />
+          </Route>
+          <Route path="/teacher-profile">
+            <TeacherProfile />
+          </Route>
+          <Route path="/student-profile">
+            <StudentProfile />
           </Route>
         </Switch>
       </Router>
